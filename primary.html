@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Chat App</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+    </head>
+    <body class="b1">
+        <button class="btn btn-danger glyphicon glyphicon-log-out" onclick="loginout()">Logout</button>
+        <br>
+        <center>
+            <h1 id="welcome_h1"></h1>
+            <br>
+            <h4>Create Room:</h4>
+            <br>
+            <input type="text" id="room_name" placeholder="Enter new room name here" style="width: 300px">
+            <br>
+            <br>
+            <button class="btn-btn success" onclick="addRoomFunc()">Add Room</button>
+            <br>
+            <br>
+            <h3>Trending Rooms:</h3>
+            <div id="output"></div>
+        </center>
+        <script src="primary.js"></script>
+    </body>
+</html>
