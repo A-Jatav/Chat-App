@@ -10,3 +10,41 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
+var userna = localStorage.getItem("namex");
+document.getElementById("welcome_h1").innerHTML = "Welcome "+userna+"!";
+
+function addRoomFunc(){
+    var rmname = document.getElementById("room_name").value;
+    localStorage.setItem("roomnamex1", rmname);
+    firebase.database().ref("/").child(rmname).update({
+        purpose: "Adding Room"
+    });
+    document.getElementById("room_name").value = "";
+};
+
+function getdata(){
+    firebase.database().ref("/").on('value', function(snapshot){
+        document.getElementById("output").innerHTML = "";
+        snapshot.forEach(function(childSnapshot){
+                childKey = childSnapshot.key;
+                var roomunderscorenames = childKey;
+                console.log("roomnames:"+roomunderscorenames);
+                var row = "<div class='rmnms' id="+roomunderscorenames+" onclick='rtrn(this.id)'>"+roomunderscorenames+"</div><hr>";
+                document.getElementById("output").innerHTML += row;
+            })
+        });
+};
+getdata();
+
+function rtrn(firebsedbrmnms){
+    localStorage.setItem("roomnamex1", firebsedbrmnms)
+
+    window.location = "chat_page.html";
+};
+
+function loginout(){
+    localStorage.removeItem("namex");
+    localStorage.removeItem("roomnamex1");
+    window.location = "index.html";
+};

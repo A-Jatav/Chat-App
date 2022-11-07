@@ -1,13 +1,13 @@
 .b1{
     background-color: cadetblue;
-    color: rgb(21, 221, 21);
+    color: rgb(90, 40, 227);
 }
 
 #b1 h1{
     font-family:cursive;
 }
 
-#b1 h1 img{
+#imgtg1{
     width: 80px;
     border-radius: 40px;
 }
@@ -17,7 +17,7 @@
 }
 
 .logo{
-    width:80px;
+    width: 100px;
     margin-top: 30px;
     border-radius: 40px;
 }
@@ -28,4 +28,9 @@
 
 #naame{
     width:80%;
+}
+
+.rmnms{
+    background-color: beige;
+    font-size: 30px;
 }
